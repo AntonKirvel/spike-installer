@@ -15,3 +15,6 @@ task bundle(type: NpmTask, dependsOn: npmInstall) {
 }
  
 assemble.dependsOn(bundle)
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
